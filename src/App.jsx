@@ -1,5 +1,4 @@
-axios.get(`${API_URL}/api/politicians`)axios.get(`${API_URL}/api/politicians`)import { useState, useEffect } from 'react'
-import axios from 'axios'
+axios.get(`${API_URL}/api/politicians`)import axios from 'axios'
 const API_URL = 'https://political-tracker-backend.onrender.com'
 
 function App() {
