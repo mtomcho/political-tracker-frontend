@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+const API_URL = 'https://political-tracker-backend.onrender.com'
 
 function App() {
   const [politicians, setPoliticians] = useState([])
@@ -24,7 +25,7 @@ function App() {
   ]
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/politicians')
+    axios.get('${API_URL}/api/politicians')
       .then(response => {
         setPoliticians(response.data.data)
         setFilteredPoliticians(response.data.data)
@@ -64,7 +65,7 @@ function App() {
 
   const viewVotingRecord = (politician) => {
     setSelectedPolitician(politician)
-    axios.get(`http://localhost:3000/api/politicians/${politician.id}/votes`)
+    axios.get(`${API_URL}/api/politicians/${politician.id}/votes`)
       .then(response => {
         setVotingRecord(response.data.data)
       })
