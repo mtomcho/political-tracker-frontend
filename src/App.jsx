@@ -25,7 +25,7 @@ function App() {
   ]
 
   useEffect(() => {
-    axios.get('${API_URL}/api/politicians')
+    axios.get(`${API_URL}/api/politicians`)
       .then(response => {
         setPoliticians(response.data.data)
         setFilteredPoliticians(response.data.data)
